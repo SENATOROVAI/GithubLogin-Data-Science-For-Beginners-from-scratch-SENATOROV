@@ -1,0 +1,75 @@
+venv
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.db
+
+# Runtime files #
+#################
+*.pid
+*.seed
+*.pid.lock
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Temporary files #
+###################
+*.bak
+*.swp
+*.tmp
+*.temp
+*.out
+
+# Application specific #
+########################
+
+# Node.js #
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python #
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Java #
+*.class
+*.jar
+*.war
+*.ear
+target/
+
+# macOS #
+########################
+*.DS_Store
+
+# Visual Studio Code #
+########################
+.vscode/
+
+# JetBrains (e.g., IntelliJ, PyCharm) #
+########################
+.idea/
+
+# Other #
+########################
+*.env  # Environment variable files
+coverage/

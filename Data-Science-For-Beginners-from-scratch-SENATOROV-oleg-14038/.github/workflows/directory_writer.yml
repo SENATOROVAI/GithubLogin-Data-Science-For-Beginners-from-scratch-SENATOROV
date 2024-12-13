@@ -1,0 +1,28 @@
+name: "SENATOROV"
+permissions:
+  contents: write
+on: [push]
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - name: Set script executable permission
+        run: chmod +x scripts/build_directory_md.py
+      - name: Write DIRECTORY.md and README.md
+        run: |
+          scripts/build_directory_md.py 2>&1 | tee DIRECTORY.md
+          scripts/build_directory_md.py 2>&1 | tee README.md
+          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+      - name: Commit and push changes
+        run: |
+          git add DIRECTORY.md README.md
+          git commit -m "SENATOROV updating DIRECTORY.md and README.md" || echo "No changes to commit"
+          git push --force
