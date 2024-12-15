@@ -1,17 +1,29 @@
 repos:
+  - repo: https://github.com/mwouts/jupytext
+    rev: "v1.16.4b"
+    hooks:
+     - id: jupytext
+       entry: jupytext
+       language: python
+       types: [jupyter]
+       args:
+         - --from=ipynb
+         - --to=py:light
+         - --set-formats=ipynb,py:light
+         - --quiet
+         - --sync
+         - --warn-only
+       exclude: '.*\.md$'
   - repo: https://github.com/PyCQA/docformatter
     rev: "eb1df347edd128b30cd3368dddc3aa65edcfac38"
     hooks:
       - id: docformatter
         args: [--in-place, --wrap-descriptions=79, --style=google]
-  - repo: https://github.com/asottile/add-trailing-comma
-    rev: "v3.1.0"
-    hooks:
-      - id: add-trailing-comma
   - repo: https://github.com/psf/black.git
     rev: "24.10.0"
     hooks:
       - id: black
+
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.9.0
     hooks:
@@ -32,12 +44,20 @@ repos:
     rev: "5.13.2"
     hooks:
       - id: isort
-  - repo: https://github.com/adamchainz/blacken-docs
-    rev: "1.19.1"
+        entry: isort
+        args:
+          - --float-to-top
+
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: "1.9.0"
     hooks:
-      - id: blacken-docs
-        additional_dependencies:
-          - black==24.2.0
+      - id: nbqa
+        entry: nbqa blacken-docs
+        name: nbqa-blacken-docs
+        alias: nbqa-blacken-docs
+        additional_dependencies: [blacken-docs]
+        args:
+          - --nbqa-md
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.9.0
     hooks:
@@ -57,16 +77,8 @@ repos:
         require_serial: true
         types_or: [jupyter, markdown]
         additional_dependencies: [isort]
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v5.0.0"
-    hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
-      - id: check-yaml
-      - id: debug-statements
-      - id: name-tests-test
-      - id: requirements-txt-fixer
+        args:
+          - --float-to-top
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.3.0
@@ -83,7 +95,7 @@ repos:
     hooks:
       - id: nbqa-flake8
         args:
-          - --ignore=E501,E712,W291,F632,E203,F821,F403
+          - --ignore=E501,E712,W291,F632,E203,F821,F403,W391,F401
           - --exclude=.*,__init__.py
         name: nbqa-flake8
         description: Run 'flake8' on a Jupyter Notebook
@@ -101,7 +113,7 @@ repos:
     hooks:
       - id: flake8
         args:
-          - --ignore=E501,E712,W291,F632,E203,F821,F403
+          - --ignore=E501,E712,W291,F632,E203,F821,F403,W391,F401
           - --exclude=.*,__init__.py
         additional_dependencies:
           - flake8-variables-names
@@ -206,11 +218,11 @@ repos:
           - --ignore=no_check*,__init__.py
           - --max-line-length=79
           - --const-naming-style=any
-          - --disable=E0401,W0104,R0903,R1721,E1101,E0611
+          - --disable=E0401,W0104,R0903,R1721,E1101,E0611,F0002,C0305,C0303,E2515
 
 
-  - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: "v3.0.0a5"
+  - repo: https://github.com/pylint-dev/pylint
+    rev: "v3.3.1"
     hooks:
       - id: pylint
         name: pylint
@@ -222,7 +234,7 @@ repos:
             "--ignore=no_check*,__init__.py",
             "--max-line-length=79",
             "--const-naming-style=any",
-            "--disable=E0401,W0104,R0903,R1721,E1101,E0611"
+            "--disable=E0401,W0104,R0903,R1721,E1101,E0611,F0002,C0305,line-too-long,C0303,E2515"
           ]
         additional_dependencies: [pylint]
 

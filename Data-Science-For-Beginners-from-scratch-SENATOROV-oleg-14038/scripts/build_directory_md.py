@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """module."""
-
-
 import os
 from collections.abc import Iterator
 

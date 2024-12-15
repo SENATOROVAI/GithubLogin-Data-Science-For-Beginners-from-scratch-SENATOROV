@@ -1,15 +1,4 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-# ---
-
-"""
-Module contains functions for checking the status of a door and performing.
+"""Module contains functions for checking the status of a door and performing.
 
 appropriate actions such as unlocking or opening it.
 """

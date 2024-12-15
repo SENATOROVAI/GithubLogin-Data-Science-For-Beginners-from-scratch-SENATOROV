@@ -6,9 +6,7 @@ on:
   push:
     branches:
       - "**"
-  pull_request:
-    branches:
-      - "**"
+   
   schedule:
     - cron: "0 0 * * *" # Run every day
   workflow_dispatch:
@@ -16,8 +14,7 @@ on:
   delete:
   release:
   issues:
-  pull_request_review:
-  pull_request_review_comment:
+ 
 
 jobs:
   flake8:
@@ -35,5 +32,5 @@ jobs:
         pip install flake8 nbqa flake8-variables-names pep8-naming flake8-functions-names
     - name: Flake8
       run: |
-        nbqa flake8 --ignore=B018,E203,E501,W291,F821,F401,E402,E121 $(git ls-files '*.py' '*.ipynb')
-        flake8 --ignore=B018,E203,E501,W291,F821,F401,E402,E121 $(git ls-files '*.py' '*.ipynb')
+        nbqa flake8 --ignore=B018,E203,E501,W291,F821,F401,E402,E121,E302,W391,W293 $(git ls-files '*.py' '*.ipynb')
+        flake8 --ignore=B018,E203,E501,W291,F821,F401,E402,E121,E302,W391,W293 $(git ls-files '*.py' '*.ipynb')

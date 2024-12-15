@@ -1,27 +1,12 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
-# ---
-
 # +
-"""
-The code snippet `import sys`: imports the sys module in Python.
+"""The code snippet `import sys`: imports the sys module in Python.
 
-This module provides access to some variables used or 
-maintained by the interpreter
-and to functions that interact with the interpreter.
+This module provides access to some variables used or maintained by the
+interpreter and to functions that interact with the interpreter.
 """
 
 import sys
+
 # -
 
 # #### https://codeforces.com/problemset?order=BY_RATING_ASC&tags=math
@@ -79,13 +64,12 @@ print(steps_needed)
 
 # +
 def calculate_steps() -> None:
-    """
-    Вычисляет минимальное количество шагов.
+    """Вычисляет минимальное количество шагов.
 
     Необходимых слону для достижения целевой позиции.
     """
     destination = int(
-        input("Введите целевую позицию: ")
+        input("Введите целевую позицию: "),
     )  # Ввод пользователя и преобразование в целое число
     current_position = 0  # Текущее положение слона
     steps_count = 0  # Количество выполненных шагов
@@ -145,27 +129,18 @@ print(number_two / 2 - number_two * (number_two % 2))
 # между половиной значения n и
 # произведением значения n на его остаток от деления на 2.
 
+
 # +
-def f(first_number: int) -> int:
-    """Функция принимает целое число и возвращает результат вычислений.
-
-    - Если число четное, возвращает его половину.
-    - Если число нечетное, возвращает отрицательное.
-    значение половины этого числа, уменьшенного на 1.
-
-    :param first_number: Целое число.
-    :return: Результат вычислений в виде целого числа.
-    """
-    if first_number % 2 == 0:  # После if должно следовать выражение,
-        # результатом которого будет boolean
+def calculate_half_number(first_number: int) -> int:
+    """Функция принимает целое число и возвращает результат вычислений."""
+    if first_number % 2 == 0:
         return first_number // 2
-
     return (-first_number - 1) // 2
 
 
 # input(): функция возращает введенную пользователем строку до нажатия enter
 user_input = int(input())
-print(f(user_input))
+print(calculate_half_number(user_input))
 
 # +
 total_numbers = int(input())  # Ввод целого числа от пользователя
@@ -202,10 +177,10 @@ else:
 
 # https://codeforces.com/problemset/problem/486/A
 
+
 # +
 def calculate_function(even_number: int) -> float:
-    """
-    Функция принимает целое число и возвращает результат вычислений:.
+    """Функция принимает целое число и возвращает результат вычислений:.
 
     - Если число четное, возвращает его половину.
     - Если число нечетное, возвращает отрицательное.
@@ -273,7 +248,7 @@ print(1 / int(input()) * sum(map(int, input().split())))
 # Таким образом, пользовательский ввод будет
 # интерпретироваться как делитель в дальнейшем выражении.
 
-# 3. input().split() считывает ввод пользователя, а затем разбивает
+# 3. input().split() считывает ввод п��льзователя, а затем разбивает
 # его на отдельные элементы по пробелам.
 # Функция split() без аргументов разделяет строку на отдельные слова.
 # Распакуется в список слов,
@@ -320,16 +295,16 @@ print(average)
 #
 #
 
+
 # +
 def main() -> float:
-    """
-    Основная функция программы.
+    """Основная функция программы.
 
-    которая вычисляет среднее значение.
-    набора целых чисел, введенных пользователем.
+    которая вычисляет среднее значение. набора целых чисел, введенных
+    пользователем.
 
-    :return: Среднее значение всех введенных.
-    чисел в виде числа с плавающей точкой.
+    :return: Среднее значение всех введенных. чисел в виде числа с плавающей
+    точкой.
     """
     # Ввод количества элементов
     number_of_elements = int(sys.stdin.readline())
@@ -404,8 +379,7 @@ for output in result:
 
 # +
 def calculate_modulo_difference() -> None:
-    """
-    Главная функция, которая выполняет.
+    """Главная функция, которая выполняет.
 
     расчет для каждой пары чисел, введенных пользователем.
     """
@@ -413,7 +387,8 @@ def calculate_modulo_difference() -> None:
 
     for _ in range(test_cases):
         dividend, divisor = map(
-            int, input("Введите два числа, разделенные пробелом: ").split()
+            int,
+            input("Введите два числа, разделенные пробелом: ").split(),
         )
         result_the_same = (divisor - dividend % divisor) % divisor
         print(result_the_same)

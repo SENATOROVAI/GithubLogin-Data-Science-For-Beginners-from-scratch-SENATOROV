@@ -1,6 +1,7 @@
-name: Other
+name: Question
+title: "[QUESTION]"
 description: Use this for any other issues. PLEASE do not create blank issues
-labels: ["awaiting triage"]
+labels: ["question"]
 body:
   - type: textarea
     id: issuedescription

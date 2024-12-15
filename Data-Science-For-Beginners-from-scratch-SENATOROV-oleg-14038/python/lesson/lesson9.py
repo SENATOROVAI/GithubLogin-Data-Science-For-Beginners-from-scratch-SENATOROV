@@ -1,26 +1,9 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
 # ### Чтобы вызвать метод, нужно создать объект
 
 # +
 """Модуль с импортированными типами для аннотаций."""
 
-from typing import List
-# -
-
-my_list: List[int] = []  # в python почти всё объекты
+my_list: list[int] = []  # в python почти всё объекты
 # help(list1) # хелпер, показывает описание объекта
 type(my_list)  # показывает называет класса / тип данных
 my_list
@@ -42,10 +25,10 @@ get_value(text_word)  # call function
 
 # ### Класс это контейнер для функций
 
+
 # +
 class Oleg:
-    """
-    Класс для демонстрации работы с.
+    """Класс для демонстрации работы с.
 
     атрибутами класса и методами.
 
@@ -60,8 +43,7 @@ class Oleg:
     name: str = "Олег"  # переменные это свойство класса / поле класса
 
     def set_value(self, text: str) -> str:  # функция в классе называется метод
-        """
-        Формирует строку с именем объекта и текстом.
+        """Формирует строку с именем объекта и текстом.
 
         который передан в метод.
 

@@ -1,26 +1,12 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
 # +
 """The `import random` allows you to use functions related to.
 
-generating random numbers in your code. 
-`import sys` allows you to interact with the Python.
-interpreter and operating system.
+generating random numbers in your code. `import sys` allows you to interact
+with the Python. interpreter and operating system.
 """
 
 import sys
+
 # -
 
 while True:

@@ -1,20 +1,5 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
 # https://stepik.org/lesson/375661/step/9?unit=363411
 #
-
 """Модуль для демонстрации работы с уровнями сотрудников и их категориями."""
 
 # +

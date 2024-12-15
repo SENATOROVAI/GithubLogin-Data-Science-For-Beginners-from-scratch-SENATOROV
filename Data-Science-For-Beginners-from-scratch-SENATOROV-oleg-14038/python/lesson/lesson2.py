@@ -1,17 +1,3 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: base
-#     language: python
-#     name: python3
-# ---
-
 # +
 """Модуль для поиска наибольшего значения в списке чисел."""
 
@@ -40,13 +26,11 @@ print(max_value)  # Максимальный элемент
 operation_list = ["+", "-", "/", "*"]
 
 
-def calculate(num_1: float, math_: str, num_2: float) -> bool:
-    """
-    Выполняет математическую операцию с.
-    
-    двумя числами и выводит результат на консоль.
+def calculate(num_1: float, math_: str, num_2: float) -> float | int:
+    """Выполняет математическую операцию с двумя числами и выводит результат на
+    консоль.
 
-    Параметры.
+    Параметры:
     num_1 (float): Первое число.
     math_ (str): Математическая операция (+, -, /, *).
     num_2 (float): Второе число.
@@ -56,7 +40,7 @@ def calculate(num_1: float, math_: str, num_2: float) -> bool:
     """
     try:
         if math_ == "/" and num_2 == 0:
-            print("Error: Division by zero")
+            print("Ошибка: Деление на ноль")
             return 0.0
 
         if math_ == "+":
@@ -69,31 +53,12 @@ def calculate(num_1: float, math_: str, num_2: float) -> bool:
         elif math_ == "*":
             result = num_1 * num_2
         else:
-            print("Unknown operation")
+            print("Неизвестная операция")
             return 0.0
 
-        print(f"
-{num_1} {math_} {num_2} = {result}
-")
+        print(f"{num_1} {math_} {num_2} = {result}")
         return result
 
     except ValueError:
-        print("Error: Invalid input data")
+        print("Ошибка: Неверные входные данные")
         return 0.0
-    except ValueError:
-
-def check_input_data(n1: str, opr: str, n2: str) -> bool:
-    """
-    Проверяет корректность входных данных.
-
-    Параметры:
-    n1 (str): Первое число в строковом формате.
-    opr (str): Математическая операция (+, -, /, *).
-    n2 (str): Второе число в строковом формате.
-
-    Возвращает:
-    bool: True если данные корректны, иначе False.
-    """
-    if opr not in operation_list:
-        print("Error: Invalid operation")
-        return

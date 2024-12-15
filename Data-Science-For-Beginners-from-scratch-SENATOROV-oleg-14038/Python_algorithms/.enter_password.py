@@ -1,23 +1,7 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
 # +
-"""
-Простой модуль для проверки имени пользователя и пароля.
+"""Простой модуль для проверки имени пользователя и пароля.
 
-Этот модуль выводит приветствие пользователю 
-по имени и проверяет его пароль.
+Этот модуль выводит приветствие пользователю по имени и проверяет его пароль.
 """
 
 name = "oleg"

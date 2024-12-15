@@ -1,20 +1,5 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.4
-#   kernelspec:
-#     display_name: Python 3
-#     language: python
-#     name: python3
-# ---
-
 # +
-"""
-Этот модуль выполняет обработку.
+"""Этот модуль выполняет обработку.
 
 данных с использованием библиотеки pandas.
 """
@@ -65,7 +50,5 @@ df
 # -
 
 type_series = df["Sales"].apply(
-    lambda x: str(type(x))
+    lambda x: str(type(x)),
 )  # Показывает количество типов данных
-
-
